@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de CURP</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Generador de CURP</h1>
+    <form id="curpForm">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br>
+
+        <label for="apellido1">Primer Apellido:</label>
+        <input type="text" id="apellido1" name="apellido1" required><br>
+
+        <label for="apellido2">Segundo Apellido:</label>
+        <input type="text" id="apellido2" name="apellido2" required><br>
+
+        <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+        <input type="date" id="fechaNacimiento" name="fechaNacimiento" required><br>
+
+        <label for="sexo">Sexo:</label>
+        <select id="sexo" name="sexo" required>
+            <option value="H">Hombre</option>
+            <option value="M">Mujer</option>
+        </select><br>
+
+        <label for="entidad">Entidad de Nacimiento:</label>
+        <select id="entidad" name="entidad" required>
+            <option value="CHP">Chiapas</option>
+            <!-- Agrega otras opciones de entidad aquí -->
+        </select><br>
+
+        <button type="submit">Generar CURP</button>
+    </form>
+
+    <div id="curpResult" style="display: none;"></div> <!-- Este div mostrará la CURP generada -->
+
+    <button id="limpiarBtn" style="display: none;">Limpiar formulario</button> <!-- Botón para limpiar el formulario -->
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
